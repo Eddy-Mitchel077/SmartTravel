@@ -40,13 +40,9 @@ jobs:
         run: npm test
         continue-on-error: true
 
-      # 6. Envoyer l'analyse à SonarCloud
+      # 6. SonarCloud Scan
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=Eddy-Mitchel077_SmartTravel
-            -Dsonar.organization=eddy-mitchel077
         continue-on-error: true
