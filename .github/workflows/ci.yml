@@ -40,9 +40,9 @@ jobs:
         run: npm test
         continue-on-error: true
 
-      # 6. SonarCloud Scan
+      # 6. SonarCloud Scan via npx
       - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v6
+        run: npx sonar-scanner -Dsonar.projectKey=Eddy-Mitchel077_SmartTravel -Dsonar.organization=eddy-mitchel077 -Dsonar.sources=src -Dsonar.tests=tests -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.host.url=https://sonarcloud.io
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         continue-on-error: true
