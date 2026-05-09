@@ -37,12 +37,12 @@ jobs:
 
       # 5. Lancer les tests Jest avec coverage
       - name: Run Tests with coverage
-        run: npm test -- --coverageReporters=lcov --coverageReporters=text
+        run: npm test
         continue-on-error: true
 
       # 6. SonarCloud Scan
       - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v5
+        uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         continue-on-error: true
