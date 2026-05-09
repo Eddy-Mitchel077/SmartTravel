@@ -37,7 +37,7 @@ jobs:
 
       # 5. Lancer les tests Jest avec coverage
       - name: Run Tests with coverage
-        run: npm test -- --coverage --coverageReporters=lcov --passWithNoTests
+        run: npm test
         continue-on-error: true
 
       # 6. Envoyer l'analyse à SonarCloud
