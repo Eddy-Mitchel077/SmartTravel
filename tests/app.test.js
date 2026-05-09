@@ -3,6 +3,10 @@ const app = require('../index');
 
 describe('POST /api/travel-budget', () => {
 
+  afterAll((done) => {
+    app.close ? app.close(done) : done();
+  });
+
   test('Calcul budget Asie standard sans enfants', async () => {
     const res = await request(app)
       .post('/api/travel-budget')
