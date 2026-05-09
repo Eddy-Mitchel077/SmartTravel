@@ -1,0 +1,33 @@
+{
+  "name": "smarttravel",
+  "version": "1.0.0",
+  "description": "Simulateur Intelligent de Budget Voyage",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --coverage",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "jest": "29.7.0",
+    "nodemon": "3.0.3",
+    "supertest": "6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 70
+      }
+    }
+  }
+}
